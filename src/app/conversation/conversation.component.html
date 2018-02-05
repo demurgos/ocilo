@@ -1,0 +1,7 @@
+<h1>{{conversation !== undefined ? conversation.displayName : "Loading..."}}</h1>
+
+<ol>
+  <li *ngFor="let message of messages">
+    <strong>Someone:</strong> {{message.textContent}}
+  </li>
+</ol>

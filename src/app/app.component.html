@@ -1,0 +1,19 @@
+<div *ngIf="isAuthenticated; else loginForm">
+  <h1>Contacts</h1>
+  <ul>
+    <li *ngFor="let contact of contacts">
+      <strong>{{contact.displayName}}</strong> ({{contact.id}})
+    </li>
+  </ul>
+  <h1>Conversations</h1>
+  <ul>
+    <li *ngFor="let conversation of conversations">
+      <a routerLink="/conversations/{{conversation.id}}">
+        <strong>{{conversation.displayName}}</strong> ({{conversation.id}})
+      </a>
+    </li>
+  </ul>
+</div>
+<ng-template #loginForm>
+  <ocilo-login></ocilo-login>
+</ng-template>
